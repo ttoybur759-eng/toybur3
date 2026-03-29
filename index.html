@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>ভালোবাসার ক্যালকুলেটর</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffeef2;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff3399;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>ভালোবাসার ক্যালকুলেটর 💖</h1>
+    <input type="text" id="name1" placeholder="প্রথম নাম লিখুন">
+    <input type="text" id="name2" placeholder="দ্বিতীয় নাম লিখুন"><br>
+    <button onclick="calculateLove()">ম্যাচ দেখাও</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateLove() {
+            let name1 = document.getElementById('name1').value.trim().toLowerCase();
+            let name2 = document.getElementById('name2').value.trim().toLowerCase();
+            let percentage;
+
+            // নিয়ম অনুযায়ী নির্দিষ্ট নামের জন্য
+            if ((name1 === 'suraiya' && name2 === 'toybur') || (name1 === 'toybur' && name2 === 'suraiya')) {
+                percentage = 100;
+            } else if ((name1 === 'suraiya' && name2 === 'sumon') || (name1 === 'sumon' && name2 === 'suraiya')) {
+                percentage = 0;
+            } else {
+                // অন্য যেকোনো নামের জন্য র‍্যান্ডম %
+                percentage = Math.floor(Math.random() * 101);
+            }
+
+            document.getElementById('result').innerText = "আপনার ভালোবাসা %: " + percentage + "%";
+        }
+    </script>
+</body>
+</html>
